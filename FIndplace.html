@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="image/favicon.png" type="image/png">
+        <title>StayIn.com</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <style>
+            body {
+                font-family: "Open Sans", sans-serif;
+            }
+            .cont1{
+                position: absolute;
+                top: 330%;
+                background-color: rgba(0, 255, 255, 0);
+                left: 10%;
+                width: 80%;
+            }
+            h2 {
+                color: #000;
+                font-size: 26px;
+                font-weight: 300;
+                text-align: center;
+                text-transform: uppercase;
+                position: relative;
+                margin: 30px 0 80px;
+            }
+            h2 b {
+                color: #ffc000;
+            }
+            h2::after {
+                content: "";
+                width: 100px;
+                position: absolute;
+                margin: 0 auto;
+                height: 4px;
+                background: rgba(0, 0, 0, 0.2);
+                left: 0;
+                right: 0;
+                bottom: -20px;
+            }
+            .carousel {
+                margin: 50px auto;
+                padding: 0 70px;
+            }
+            .carousel .carousel-item {
+                min-height: 330px;
+                text-align: center;
+                overflow: hidden;
+            }
+            .carousel .carousel-item .img-box {
+                height: 160px;
+                width: 100%;
+                position: relative;
+            }
+            .carousel .carousel-item img {	
+                max-width: 100%;
+                max-height: 100%;
+                display: inline-block;
+                position: absolute;
+                bottom: 0;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+            }
+            .carousel .carousel-item h4 {
+                font-size: 18px;
+                margin: 10px 0;
+            }
+            .carousel .carousel-item .btn {
+                color: #333;
+                border-radius: 0;
+                font-size: 11px;
+                text-transform: uppercase;
+                font-weight: bold;
+                background: none;
+                border: 1px solid #ccc;
+                padding: 5px 10px;
+                margin-top: 5px;
+                line-height: 16px;
+            }
+            .carousel .carousel-item .btn:hover, .carousel .carousel-item .btn:focus {
+                color: #fff;
+                background: #000;
+                border-color: #000;
+                box-shadow: none;
+            }
+            .carousel .carousel-item .btn i {
+                font-size: 14px;
+                font-weight: bold;
+                margin-left: 5px;
+            }
+            .carousel .thumb-wrapper {
+                text-align: center;
+            }
+            .carousel .thumb-content {
+                padding: 15px;
+            }
+            .carousel-control-prev, .carousel-control-next {
+                height: 100px;
+                width: 40px;
+                background: none;
+                margin: auto 0;
+                background: rgba(0, 0, 0, 0.2);
+            }
+            .carousel-control-prev i, .carousel-control-next i {
+                font-size: 30px;
+                position: absolute;
+                top: 50%;
+                display: inline-block;
+                margin: -16px 0 0 0;
+                z-index: 5;
+                left: 0;
+                right: 0;
+                color: rgba(0, 0, 0, 0.8);
+                text-shadow: none;
+                font-weight: bold;
+            }
+            .carousel-control-prev i {
+                margin-left: -3px;
+            }
+            .carousel-control-next i {
+                margin-right: -3px;
+            }
+            .carousel .item-price {
+                font-size: 13px;
+                padding: 2px 0;
+            }
+            .carousel .item-price strike {
+                color: #999;
+                margin-right: 5px;
+            }
+            .carousel .item-price span {
+                color: #86bd57;
+                font-size: 110%;
+            }	
+            .carousel .carousel-indicators {
+                bottom: -50px;
+            }
+            .carousel-indicators li, .carousel-indicators li.active {
+                width: 10px;
+                height: 10px;
+                margin: 4px;
+                border-radius: 50%;
+                border-color: transparent;
+                border: none;
+            }
+            .carousel-indicators li {	
+                background: rgba(0, 0, 0, 0.2);
+            }
+            .carousel-indicators li.active {	
+                background: rgba(0, 0, 0, 0.6);
+            }
+            .star-rating li {
+                padding: 0;
+            }
+            .star-rating i {
+                font-size: 14px;
+                color: #ffc000;
+            }
+            .btn-book-now {
+                    background-color: #ffc000;
+                    color: #000;
+                    font-weight: bold;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                /* Add this style to change the background color of the close button */
+            .modal-header button.close {
+                background-color: #d02424; /* Change this color to your desired background color */
+                border: none; /* Remove the border if needed */
+                padding: 10px; /* Adjust padding as needed */
+                border-radius: 5px; /* Add border-radius for rounded corners if needed */
+                color: #fff; /* Set text color to contrast with the background color */
+            }
+            
+            /* Add this style to change the background color of the close button on hover */
+            .modal-header button.close:hover {
+                background-color: #828181; /* Change this color to your desired hover background color */
+                color: #fff; /* Set text color on hover to contrast with the hover background color */
+            }
+            .cont {
+                width: 80%; /* Adjust this value to make the container bigger or smaller */
+                margin: 0; /* Center the container on the page */
+                background-color: rgb(255, 255, 255);
+                padding: 20px;
+                margin-left: 10%;
+                border-bottom: 2px solid rgb(249, 201, 96);
+            }
+            </style>
+    </head>
+    <body>
+        <!--================Header Area =================-->
+        <header class="header_area">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand logo_h" href="index.html"><img src="image/Logo.png" alt="" width="100px" height="100px"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item "><a class="nav-link" href="index.html">Home</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="FIndplace.html">Find A Place</a></li>
+                            <li class="nav-item"><a class="nav-link" href="Listproperty.html">List Property</a></li>
+                            <li class="nav-item"><a class="nav-link" href="Myarea.html">My Area</a></li>
+                        </ul>
+                    </div> 
+                </nav>
+            </div>
+        </header>
+        <section class="banner_area">
+            <div class="booking_table d_flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+                    <h2 class="page-cover-tittle" style="text-align: center; ">Find your ideal Place</h2>
+                    <p style="text-align: center; color: white;">Discover your ideal place effortlessly. At <strong>Stay In</strong>, we're dedicated to making your stay extraordinary. Find your perfect retreat with ease and embark on a journey tailored just for you. Start exploring now!</p>
+				</div>
+            </div>
+            <div class="hotel_booking_area position">
+                <div class="container">
+                    <div class="hotel_booking_table">
+                        <div class="col-md-3">
+                            <h2>Book<br> Your Room</h2>
+                            
+                        </div>
+                        <div class="col-md-9">
+                            <div class="boking_table">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="book_tabel_item">
+                                            <div class="form-group">
+                                                <div class='input-group date' id='datetimepicker11'>
+                                                    <input type='text' class="form-control" placeholder="Arrival Date"/>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class='input-group date' id='datetimepicker1'>
+                                                    <input type='text' class="form-control" placeholder="Departure Date"/>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="book_tabel_item">
+                                            <div class="input-group1">
+                                                <input type="text" id="destination" name="destination" class="wide" min="1" placeholder="Destination (Borongan)">
+                                            </div>
+                                            <div class="input-group">
+                                                <select class="wide">
+                                                    <option data-display="Property Type">All</option>
+                                                    <option value="1">Apartment</option>
+                                                    <option value="2">Hotel</option>
+                                                    <option value="3">Boarding House</option>
+                                                    <option value="1">Rooms</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="book_tabel_item">
+                                            <div class="input-group1">
+                                                <input type="number" id="occupancy" name="occupancy" class="wide" min="1" placeholder="Number of Guests">
+                                            </div>
+                                            <a class="book_now_btn button_hover" href="#">Check Availability</a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="cont">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Special <b>OFfers</b></h2>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                    <!-- Carousel indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>   
+                    <!-- Wrapper for carousel items -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/10.png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>GV Hotel Borongan</h4>
+                                            <p class="item-price"><strike>₱400.00</strike> <span>₱300.00 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/9.png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Hotel Dona Vicenta</h4>
+                                            <p class="item-price"><strike>₱500.00</strike> <span>₱399.99 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>		
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/2.png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Boro Bay Hotel</h4>
+                                            <p class="item-price"><strike>₱499.00</strike> <span>₱399.99 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>								
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/7.png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>RedDoorz @ J&V Ocean View Borongan</h4>
+                                            <p class="item-price"><strike>₱350.00</strike> <span>₱299.99 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/8 (2).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Stellar Hotel</h4>
+                                            <p class="item-price"><strike>₱599.99</strike> <span>₱499.99 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/3 (1).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Rawis Resort Hotel</h4>
+                                            <p class="item-price"><strike>₱399.99</strike> <span>₱299.99 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/8 (1).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Primea Hotel</h4>
+                                            <p class="item-price"><strike>₱499.00</strike> <span>₱399.00 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/7 (1).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Mabaroca Beach Resort</h4>
+                                            <p class="item-price"><strike>₱599.00</strike> <span>₱569.00 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Datails</a>
+                                        </div>						
+                                    </div>
+                                </div>						
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/5 (1).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Domsowir Hotel and Restaurant</h4>
+                                            <p class="item-price"><strike>₱369.00</strike> <span>₱349.00 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/6.png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Pirates Cove Beach and Surf Resort</h4>
+                                            <p class="item-price"><strike>₱315.00</strike> <span>₱250.00 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/6 (1).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Mountain View Place</h4>
+                                            <p class="item-price"><strike>₱450.00</strike> <span>₱418.00 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>	
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/1 (1).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Palms Apartment</h4>
+                                            <p class="item-price"><strike>₱350.00</strike> <span>₱330.00 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel controls -->
+                    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="cont">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Top <b>Hotels</b></h2>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/10.png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>GV Hotel Borongan</h4>
+                                            <p class="item-price"><strike>₱400.00</strike> <span>₱300.00 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/9.png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Hotel Dona Vicenta</h4>
+                                            <p class="item-price"><strike>₱500.00</strike> <span>₱399.99 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>		
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/2.png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Boro Bay Hotel</h4>
+                                            <p class="item-price"><strike>₱499.00</strike> <span>₱399.99 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>								
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/7.png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>RedDoorz @ J&V Ocean View Borongan</h4>
+                                            <p class="item-price"><strike>₱350.00</strike> <span>₱299.99 per/night</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="cont">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Top <b>Boarding House</b></h2>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/4 (1).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Maypangdan</h4>
+                                            <p class="item-price"><strike>₱1999.00</strike> <span>₱1000 per/month</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/4 (2).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Maypangdan</h4>
+                                            <p class="item-price"><strike>₱1999.00</strike> <span>₱1000 per/month</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>		
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/3 (2).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Tabunan</h4>
+                                            <p class="item-price"><strike>₱1999.00</strike> <span>₱1000 per/month</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>								
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/1 (1).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Tabunan</h4>
+                                            <p class="item-price"><strike>₱1999.00</strike> <span>₱1000 per/month</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="cont">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>New Added <b>Rooms/Bed</b></h2>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/1 (2).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Maypangdan</h4>
+                                            <p class="item-price"><strike>₱1999.00</strike> <span>₱1000 per/month</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/1 (3).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Maypangdan</h4>
+                                            <p class="item-price"><strike>₱1999.00</strike> <span>₱1000 per/month</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>		
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/2 (2).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Maypangdan</h4>
+                                            <p class="item-price"><strike>₱1999.00</strike> <span>₱1000 per/month</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>								
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <div class="img-box">
+                                            <img src="feature/2 (3).png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Maypangdan</h4>
+                                            <p class="item-price"><strike>₱1999.00</strike> <span>₱1000 per/month</span></p>
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="btn btn-primary">See Details</a>
+                                        </div>						
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+      
+        <!-- ... (your existing HTML code) ... -->
+        
+        <div id="bookNowSection" style="display: none;">
+            <h6>Booking Details:</h6>
+            <p>Select the duration of your stay, provide guest information, and complete the booking process.</p>
+            <!-- Add more booking-related information and input fields as needed -->
+        </div>
+        
+        <div id="bookingProcessSection" style="display: none;">
+            <h6>Booking Process:</h6>
+            <p>Enter guest details, select duration, and complete the booking process.</p>
+            <!-- Add more steps or information about the booking process -->
+        </div>
+        
+        <div id="additionalDisplaySection" style="display: none;">
+            <h6>Additional Information:</h6>
+            <p>This is additional information displayed when you click the "Book Now" button.</p>
+            <!-- Add more content as needed -->
+        </div>
+        <!-- Modify the script to redirect to a new div or section in the modal when booking -->
+        <!-- ... (your existing HTML code) ... -->
+        
+        <div id="bookNowSection" style="display: none;">
+            <h6>Booking Details:</h6>
+            <p>Select the duration of your stay, provide guest information, and complete the booking process.</p>
+            <!-- Add more booking-related information and input fields as needed -->
+        </div>
+        
+        <div id="bookingProcessSection" style="display: none;">
+            <h6>Booking Process:</h6>
+            <p>Enter guest details, select duration, and complete the booking process.</p>
+            <!-- Add more steps or information about the booking process -->
+        </div>
+        
+        <div id="additionalDisplaySection" style="display: none;">
+            <h6>Additional Information:</h6>
+            <p>This is additional information displayed when you click the "Book Now" button.</p>
+            <!-- Add more content as needed -->
+        </div>
+
+
+
+        
+        <!--================ start footer Area  =================-->	
+        <footer class="footer-area section_gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3  col-md-6 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6 class="footer_title">About Agency</h6>
+                            <p>The world has become so fast paced that people don’t want to stand by reading a page of information, they would much rather look at a presentation and understand the message. It has come to a point </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6 class="footer_title">Navigation Links</h6>
+                            <div class="row">
+                                <div class="col-4">
+                                    <ul class="list_style">
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">Feature</a></li>
+                                        <li><a href="#">Services</a></li>
+                             
+                                    </ul>
+                                </div>
+                                <div class="col-4">
+                                    <ul class="list_style">
+                                        <li><a href="#">Team</a></li>
+                                        <li><a href="#">Pricing</a></li>
+                                   
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </div>										
+                            </div>							
+                        </div>
+                    </div>							
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6 class="footer_title">Feedback and Reviews</h6>
+                            <p>Your Feedback matters to us. </p>		
+                            <div id="mc_embed_signup">
+                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
+                                    <div class="input-group d-flex flex-row">
+                                        
+                                        <input name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                                        <input name="EMAIL" placeholder="Reviews" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Feedback here '" required="" type="feedback">
+                                        <button class="btn sub-btn"><span class="lnr lnr-location"></span></button>		
+                                        
+                                    </div>									
+                                    <div class="mt-10 info"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-footer-widget instafeed">
+                            <h6 class="footer_title">Gallery</h6>
+                            <ul class="list_style instafeed d-flex flex-wrap">
+                                <li><img src="image/instagram/Image-01.jpg" alt="" width="50px" height="50px"></li>
+                                <li><img src="image/instagram/Image-02.jpg" alt="" width="50px" height="50px"></li>
+                                <li><img src="image/instagram/Image-03.jpg" alt="" width="50px" height="50px"></li>
+                                <li><img src="image/instagram/Image-04.jpg" alt="" width="50px" height="50px"></li>
+                                <li><img src="image/instagram/Image-05.jpg" alt="" width="50px" height="50px"></li>
+                                <li><img src="image/instagram/Image-06.jpg" alt="" width="50px" height="50px"></li>
+                                <li><img src="image/instagram/Image-07.jpg" alt="" width="50px" height="50px"></li>
+                                <li><img src="image/instagram/Image-08.jpg" alt="" width="50px" height="50px"></li>
+                            </ul>
+                        </div>
+                    </div>						
+                </div>
+                <div class="border_line"></div>
+                <div class="row footer-bottom d-flex justify-content-between align-items-center">
+                    <p class="col-lg-8 col-sm-12 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </i><a href="index.html" target="_blank">Stay In.com</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    <div class="col-lg-4 col-sm-12 footer-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-behance"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+		<!--================ End footer Area  =================-->
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
+        <script src="vendors/nice-select/js/jquery.nice-select.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="js/custom.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.btn-primary').on('click', function () {
+                    var detailsContainer = $(this).closest('.thumb-content');
+                    var details = detailsContainer.find('h4, .item-price, .star-rating').clone();
+        
+                    // Additional information, services, and offers
+                    var additionalInfo = '<div class="additional-info">';
+                    additionalInfo += '<h5>Additional Information</h5>';
+                    additionalInfo += '<p>Enjoy the following services and offers during your stay:</p>';
+                    additionalInfo += '<ul>';
+                    additionalInfo += '<li>Free Wi-Fi</li>';
+                    additionalInfo += '<li>Electricity</li>';
+                    additionalInfo += '<li>Water</li>';
+                    // Add more services and offers as needed
+                    additionalInfo += '</ul>';
+                    additionalInfo += '</div>';
+        
+                    var modalContent = '<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">';
+                    modalContent += '<div class="modal-dialog modal-lg" role="document">';
+                    modalContent += '<div class="modal-content">';
+                    modalContent += '<div class="modal-header">';
+                    modalContent += '<h5 class="modal-title" id="detailsModalLabel">Product Details</h5>';
+                    modalContent += '<button type="button" class="close" data-dismiss="modal" aria-label="Close">';
+                    modalContent += '<span aria-hidden="true">&times;</span>';
+                    modalContent += '</button>';
+                    modalContent += '</div>';
+                    modalContent += '<div class="modal-body" style="max-height: 500px; overflow-y: auto;">';
+        
+                    modalContent += '<div id="imageGallery" class="carousel slide" data-ride="carousel">';
+                    modalContent += '<div class="carousel-inner">';
+                    
+                    // Include specific images in the carousel
+                    modalContent += '<div class="carousel-item active">';
+                    modalContent += '<img src="feature/image-05.jpg" class="d-block w-100" alt="Image 1">';
+                    modalContent += '</div>';
+                    modalContent += '<div class="carousel-item">';
+                    modalContent += '<img src="feature/3.png" class="d-block w-100" alt="Image 2">';
+                    modalContent += '</div>';
+                    modalContent += '<div class="carousel-item">';
+                    modalContent += '<img src="feature/4.jpg" class="d-block w-100" alt="Image 2">';
+                    modalContent += '</div>';
+                    
+                    modalContent += '<div class="carousel-item">';
+                    modalContent += '<img src="feature/7.png" class="d-block w-100" alt="Image 2">';
+                    modalContent += '</div>';
+                    
+                    
+                    modalContent += '</div>';
+                    modalContent += '<a class="carousel-control-prev" href="#imageGallery" role="button" data-slide="prev">';
+                    modalContent += '<span class="carousel-control-prev-icon" aria-hidden="true"></span>';
+                    modalContent += '<span class="sr-only">Previous</span>';
+                    modalContent += '</a>';
+                    modalContent += '<a class="carousel-control-next" href="#imageGallery" role="button" data-slide="next">';
+                    modalContent += '<span class="carousel-control-next-icon" aria-hidden="true"></span>';
+                    modalContent += '<span class="sr-only">Next</span>';
+                    modalContent += '</a>';
+                    modalContent += '</div>';
+        
+                    modalContent += '<div class="product-details">';
+                    modalContent += '<div class="details-content">' + details.wrapAll('<div/>').parent().html() + '</div>';
+        
+                    // Include the existing content with the booking form HTML
+                    modalContent += '<div id="bookNowSection">';
+                    modalContent += '<div class="container">';
+                    modalContent += '<h2>Book Now</h2>';
+                    modalContent += '<div class="booking-form">';
+                    modalContent += '<form id="bookNowForm">';
+                    modalContent += '<div class="form-group">';
+                    modalContent += '<label for="fullName">Full Name</label>';
+                    modalContent += '<input type="text" id="fullName" name="fullName" class="form-control" required>';
+                    modalContent += '</div>';
+                    modalContent += '<div class="form-group">';
+                    modalContent += '<label for="email">Email</label>';
+                    modalContent += '<input type="email" id="email" name="email" class="form-control" required>';
+                    modalContent += '</div>';
+                    modalContent += '<div class="form-group">';
+                    modalContent += '<label for="checkInDate">Check-in Date</label>';
+                    modalContent += '<input type="date" id="checkInDate" name="checkInDate" class="form-control" required>';
+                    modalContent += '</div>';
+                    modalContent += '<div class="form-group">';
+                    modalContent += '<label for="duration">Duration (in days)</label>';
+                    modalContent += '<input type="number" id="duration" name="duration" class="form-control" required>';
+                    modalContent += '</div>';
+        
+                    // Placeholder for payment information
+                    modalContent += '<div class="form-group">';
+                    modalContent += '<label for="cardNumber">Card Number</label>';
+                    modalContent += '<input type="text" id="cardNumber" name="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" required>';
+                    modalContent += '</div>';
+                    modalContent += '<div class="form-group">';
+                    modalContent += '<label for="expiryDate">Expiry Date</label>';
+                    modalContent += '<input type="text" id="expiryDate" name="expiryDate" class="form-control" placeholder="MM/YYYY" required>';
+                    modalContent += '</div>';
+                    modalContent += '<div class="form-group">';
+                    modalContent += '<label for="cvv">CVV (Card Verification Value)</label>';
+                    modalContent += '<input type="text" id="cvv" name="cvv" class="form-control" placeholder="123" required>';
+                    modalContent += '</div>';
+        
+                    modalContent += '<button type="submit" class="btn btn-book-now">Book Now</button>';
+                    modalContent += '</form>';
+                    modalContent += '</div>';
+                    modalContent += '</div>';
+                    modalContent += '</div>';
+                    modalContent += '</div>';
+        
+                    // Include additional information, services, and offers
+                    modalContent += additionalInfo;
+        
+                    modalContent += '</div>';
+        
+                    modalContent += '</div>';
+        
+                    modalContent += '<div class="modal-footer">';
+                    modalContent += '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>';
+                    modalContent += '</div>';
+                    modalContent += '</div>';
+                    modalContent += '</div>';
+                    modalContent += '</div>';
+        
+                    $('body').append(modalContent);
+                    $('#detailsModal').modal('show');
+                    $('#imageGallery').carousel();
+        
+                    $('#bookNowForm').submit(function (event) {
+                        event.preventDefault();
+                        // Add your booking process logic here
+                        var paymentInfo = {
+                            cardNumber: $('#cardNumber').val(),
+                            expiryDate: $('#expiryDate').val(),
+                            cvv: $('#cvv').val()
+                        };
+                        alert('Booking process initiated. Enter guest details, select duration, etc. Payment Info: ' + JSON.stringify(paymentInfo));
+                        // TODO: Implement the booking process and integrate with a payment gateway
+                    });
+                });
+            });
+        </script>
+        
+        
+    </body>
+</html>
